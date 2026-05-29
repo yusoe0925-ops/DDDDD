@@ -1612,132 +1612,6 @@ img:hover {
     transform: translateY(-4px) scale(1.02);
     filter: brightness(1.05);
 }
-  /* ========================= */
-/* MODE BUTTON */
-/* ========================= */
-
-.mode-buttons {
-    display: flex;
-    justify-content: center;
-    gap: 12px;
-    margin-bottom: 25px;
-}
-
-.mode-buttons button {
-    padding: 12px 22px;
-    border-radius: 999px;
-    border: none;
-    background: #FFF1E7;
-    color: #FF9A57;
-    font-weight: 700;
-    cursor: pointer;
-    transition: 0.2s;
-}
-
-.mode-buttons button:hover {
-    transform: translateY(-4px);
-    background: #FFE3CF;
-}
-
-/* ========================= */
-/* VIEWER */
-/* ========================= */
-
-.viewer {
-    display: none;
-    align-items: center;
-    justify-content: center;
-    gap: 12px;
-}
-
-.viewer.active {
-    display: flex;
-}
-
-/* 이미지 트랙 */
-.track {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 700px;
-    overflow: hidden;
-}
-
-/* 이미지 */
-.track img {
-    width: 100%;
-    max-width: 700px;
-    border-radius: 18px;
-    display: none;
-    cursor: pointer;
-    transition: 0.25s ease;
-}
-
-/* 현재 이미지 */
-.track img.active {
-    display: block;
-    border: 4px solid #FF9A57;
-    box-shadow: 0 12px 30px rgba(255,170,110,0.25);
-}
-
-/* ========================= */
-/* 화살표 (깔끔 버전) */
-/* ========================= */
-
-.nav {
-    width: 48px;
-    height: 48px;
-    border-radius: 50%;
-    border: none;
-    background: #FFF1E7;
-    color: #FF9A57;
-    font-size: 28px;
-    cursor: pointer;
-    transition: 0.2s;
-}
-
-.nav:hover {
-    transform: scale(1.1);
-    background: #FFE3CF;
-}
-
-/* ========================= */
-/* MODAL */
-/* ========================= */
-
-#modal {
-    position: fixed;
-    inset: 0;
-    background: rgba(0,0,0,0.6);
-    display: none;
-    justify-content: center;
-    align-items: center;
-}
-
-.modal-box {
-    position: relative;
-    max-width: 80%;
-}
-
-.modal-box img {
-    width: 100%;
-    border-radius: 18px;
-}
-
-.close {
-    position: absolute;
-    top: -18px;
-    right: -18px;
-    width: 42px;
-    height: 42px;
-    background: #FF9A57;
-    color: white;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-}
 </style>
 
 <script>
@@ -1796,18 +1670,209 @@ document
     showSlide(currentSlide);
 
 });
+
+</script>
+<section id="portfolio">
+
+    <div class="section-mini-title">PORTFOLIO</div>
+    <h1 class="section-title">샘플 작업</h1>
+
+    <!-- 모드 버튼 -->
+    <div class="mode-buttons">
+        <button onclick="switchMode('h')">가로형</button>
+        <button onclick="switchMode('v')">세로형</button>
+    </div>
+
+    <!-- VIEWER -->
+    <div id="hViewer" class="viewer active">
+        <button class="nav" onclick="prev('h')">‹</button>
+
+        <div class="track" id="hTrack">
+            <img src="1.jpg" class="active">
+            <img src="2.jpg">
+            <img src="3.jpg">
+        </div>
+
+        <button class="nav" onclick="next('h')">›</button>
+    </div>
+
+    <div id="vViewer" class="viewer">
+        <button class="nav" onclick="prev('v')">‹</button>
+
+        <div class="track" id="vTrack">
+            <img src="4.jpg" class="active">
+            <img src="5.jpg">
+            <img src="6.jpg">
+        </div>
+
+        <button class="nav" onclick="next('v')">›</button>
+    </div>
+
+</section>
+
+<!-- MODAL -->
+<div id="modal">
+    <div class="modal-box">
+        <img id="modal-img">
+        <div class="close" onclick="closeModal()">✕</div>
+    </div>
+</div>
+
+<style>
+
+/* ========================= */
+/* MODE BUTTON */
+/* ========================= */
+
+.mode-buttons{
+    display:flex;
+    justify-content:center;
+    gap:12px;
+    margin-bottom:25px;
+}
+
+.mode-buttons button{
+    padding:12px 22px;
+    border:none;
+    border-radius:999px;
+    background:#FFF1E7;
+    color:#FF9A57;
+    font-weight:700;
+    cursor:pointer;
+}
+
+/* ========================= */
+/* VIEWER */
+/* ========================= */
+
+.viewer{
+    display:none;
+    justify-content:center;
+    align-items:center;
+    gap:12px;
+}
+
+.viewer.active{
+    display:flex;
+}
+
+.track{
+    width:700px;
+    text-align:center;
+}
+
+.track img{
+    width:100%;
+    display:none;
+    border-radius:18px;
+    cursor:pointer;
+}
+
+.track img.active{
+    display:block;
+    border:4px solid #FF9A57;
+    box-shadow:0 10px 25px rgba(255,170,110,0.25);
+}
+
+/* 버튼 */
+.nav{
+    width:48px;
+    height:48px;
+    border:none;
+    border-radius:50%;
+    background:#FFF1E7;
+    font-size:24px;
+    cursor:pointer;
+}
+
+/* ========================= */
+/* MODAL */
+/* ========================= */
+
+#modal{
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,0.6);
+    display:none;
+    justify-content:center;
+    align-items:center;
+}
+
+.modal-box{
+    position:relative;
+    max-width:80%;
+}
+
+.modal-box img{
+    width:100%;
+    border-radius:18px;
+}
+
+.close{
+    position:absolute;
+    top:-15px;
+    right:-15px;
+    width:42px;
+    height:42px;
+    background:#FF9A57;
+    color:white;
+    border-radius:50%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    cursor:pointer;
+}
+
+</style>
+
 <script>
 
 let hIndex = 0;
 let vIndex = 0;
 
-function show(track, index){
+/* 슬라이드 변경 */
+function show(trackId, index){
+
+    const track = document.getElementById(trackId);
     const imgs = track.querySelectorAll('img');
+
     imgs.forEach(i => i.classList.remove('active'));
     imgs[index].classList.add('active');
 }
 
-/* 모드 변경 */
+/* next */
+function next(type){
+
+    if(type === 'h'){
+        const imgs = document.querySelectorAll('#hTrack img');
+        hIndex = (hIndex + 1) % imgs.length;
+        show('hTrack', hIndex);
+    }
+
+    if(type === 'v'){
+        const imgs = document.querySelectorAll('#vTrack img');
+        vIndex = (vIndex + 1) % imgs.length;
+        show('vTrack', vIndex);
+    }
+}
+
+/* prev */
+function prev(type){
+
+    if(type === 'h'){
+        const imgs = document.querySelectorAll('#hTrack img');
+        hIndex = (hIndex - 1 + imgs.length) % imgs.length;
+        show('hTrack', hIndex);
+    }
+
+    if(type === 'v'){
+        const imgs = document.querySelectorAll('#vTrack img');
+        vIndex = (vIndex - 1 + imgs.length) % imgs.length;
+        show('vTrack', vIndex);
+    }
+}
+
+/* 모드 */
 function switchMode(mode){
 
     document.getElementById('hViewer').classList.remove('active');
@@ -1820,129 +1885,24 @@ function switchMode(mode){
     }
 }
 
-/* 가로 */
-document.getElementById('hNext').onclick = () => {
-    const track = document.getElementById('hTrack');
-    const imgs = track.querySelectorAll('img');
-    hIndex = (hIndex + 1) % imgs.length;
-    show(track, hIndex);
-};
-
-document.getElementById('hPrev').onclick = () => {
-    const track = document.getElementById('hTrack');
-    const imgs = track.querySelectorAll('img');
-    hIndex = (hIndex - 1 + imgs.length) % imgs.length;
-    show(track, hIndex);
-};
-
-/* 세로 */
-document.getElementById('vNext').onclick = () => {
-    const track = document.getElementById('vTrack');
-    const imgs = track.querySelectorAll('img');
-    vIndex = (vIndex + 1) % imgs.length;
-    show(track, vIndex);
-};
-
-document.getElementById('vPrev').onclick = () => {
-    const track = document.getElementById('vTrack');
-    const imgs = track.querySelectorAll('img');
-    vIndex = (vIndex - 1 + imgs.length) % imgs.length;
-    show(track, vIndex);
-};
-
-/* 휠 */
-document.addEventListener('wheel', (e) => {
-
-    const activeViewer = document.querySelector('.viewer.active');
-    const track = activeViewer.querySelector('.track');
-    const imgs = track.querySelectorAll('img');
-
-    let index = (activeViewer.id === 'hViewer') ? hIndex : vIndex;
-
-    if(e.deltaY > 0){
-        index++;
-    } else {
-        index--;
-    }
-
-    if(index < 0) index = imgs.length - 1;
-    if(index >= imgs.length) index = 0;
-
-    if(activeViewer.id === 'hViewer'){
-        hIndex = index;
-    } else {
-        vIndex = index;
-    }
-
-    show(track, index);
-});
-
-/* 확대 */
+/* 모달 */
 const modal = document.getElementById('modal');
 const modalImg = document.getElementById('modal-img');
 
-document.querySelectorAll('.track img').forEach(img => {
-    img.addEventListener('click', () => {
+document.addEventListener('click', (e)=>{
+
+    if(e.target.tagName === 'IMG' && e.target.closest('.track')){
         modal.style.display = 'flex';
-        modalImg.src = img.src;
-    });
+        modalImg.src = e.target.src;
+    }
+
 });
 
+/* 닫기 */
 function closeModal(){
     modal.style.display = 'none';
 }
 
 </script>
-</script>
-<section id="portfolio">
-
-    <div class="section-mini-title">PORTFOLIO</div>
-    <h1 class="section-title">샘플 작업</h1>
-
-    <!-- 모드 선택 -->
-    <div class="mode-buttons">
-        <button onclick="switchMode('h')">가로형</button>
-        <button onclick="switchMode('v')">세로형</button>
-    </div>
-
-    <!-- 가로 갤러리 -->
-    <div class="viewer active" id="hViewer">
-
-        <button class="nav left" id="hPrev">‹</button>
-
-        <div class="track" id="hTrack">
-            <img src="1.jpg" class="active">
-            <img src="2.jpg">
-            <img src="3.jpg">
-        </div>
-
-        <button class="nav right" id="hNext">›</button>
-
-    </div>
-
-    <!-- 세로 갤러리 -->
-    <div class="viewer" id="vViewer">
-
-        <button class="nav left" id="vPrev">‹</button>
-
-        <div class="track" id="vTrack">
-            <img src="4.jpg" class="active">
-            <img src="5.jpg">
-            <img src="6.jpg">
-        </div>
-
-        <button class="nav right" id="vNext">›</button>
-
-    </div>
-
-</section>
-
-<!-- 모달 -->
-<div id="modal">
-    <div class="modal-box">
-        <img id="modal-img">
-        <div class="close" onclick="closeModal()">✕</div>
-    </div>
-</div>
 </body>
 </html>
