@@ -1796,7 +1796,103 @@ document
     showSlide(currentSlide);
 
 });
+<script>
 
+let hIndex = 0;
+let vIndex = 0;
+
+function show(track, index){
+    const imgs = track.querySelectorAll('img');
+    imgs.forEach(i => i.classList.remove('active'));
+    imgs[index].classList.add('active');
+}
+
+/* 모드 변경 */
+function switchMode(mode){
+
+    document.getElementById('hViewer').classList.remove('active');
+    document.getElementById('vViewer').classList.remove('active');
+
+    if(mode === 'h'){
+        document.getElementById('hViewer').classList.add('active');
+    } else {
+        document.getElementById('vViewer').classList.add('active');
+    }
+}
+
+/* 가로 */
+document.getElementById('hNext').onclick = () => {
+    const track = document.getElementById('hTrack');
+    const imgs = track.querySelectorAll('img');
+    hIndex = (hIndex + 1) % imgs.length;
+    show(track, hIndex);
+};
+
+document.getElementById('hPrev').onclick = () => {
+    const track = document.getElementById('hTrack');
+    const imgs = track.querySelectorAll('img');
+    hIndex = (hIndex - 1 + imgs.length) % imgs.length;
+    show(track, hIndex);
+};
+
+/* 세로 */
+document.getElementById('vNext').onclick = () => {
+    const track = document.getElementById('vTrack');
+    const imgs = track.querySelectorAll('img');
+    vIndex = (vIndex + 1) % imgs.length;
+    show(track, vIndex);
+};
+
+document.getElementById('vPrev').onclick = () => {
+    const track = document.getElementById('vTrack');
+    const imgs = track.querySelectorAll('img');
+    vIndex = (vIndex - 1 + imgs.length) % imgs.length;
+    show(track, vIndex);
+};
+
+/* 휠 */
+document.addEventListener('wheel', (e) => {
+
+    const activeViewer = document.querySelector('.viewer.active');
+    const track = activeViewer.querySelector('.track');
+    const imgs = track.querySelectorAll('img');
+
+    let index = (activeViewer.id === 'hViewer') ? hIndex : vIndex;
+
+    if(e.deltaY > 0){
+        index++;
+    } else {
+        index--;
+    }
+
+    if(index < 0) index = imgs.length - 1;
+    if(index >= imgs.length) index = 0;
+
+    if(activeViewer.id === 'hViewer'){
+        hIndex = index;
+    } else {
+        vIndex = index;
+    }
+
+    show(track, index);
+});
+
+/* 확대 */
+const modal = document.getElementById('modal');
+const modalImg = document.getElementById('modal-img');
+
+document.querySelectorAll('.track img').forEach(img => {
+    img.addEventListener('click', () => {
+        modal.style.display = 'flex';
+        modalImg.src = img.src;
+    });
+});
+
+function closeModal(){
+    modal.style.display = 'none';
+}
+
+</script>
 </script>
 <section id="portfolio">
 
