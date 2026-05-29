@@ -1,0 +1,1872 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<title>thxcarrot commission</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Pretendard:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Pretendard',sans-serif;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+
+    background:#FFFCFA;
+    color:#333;
+
+}
+
+/* ========================= */
+/* 오른쪽 메뉴 */
+/* ========================= */
+
+.floating-menu{
+
+    position:fixed;
+
+    right:32px;
+    top:50%;
+
+    transform:translateY(-50%);
+
+    display:flex;
+    flex-direction:column;
+
+    gap:12px;
+
+    z-index:999;
+
+}
+
+.menu-item{
+
+    width:150px;
+    height:48px;
+
+    border-radius:999px;
+
+    background:rgba(255,255,255,0.82);
+
+    backdrop-filter:blur(12px);
+
+    border:1px solid rgba(255,255,255,0.95);
+
+    box-shadow:
+    0 8px 24px rgba(255,176,103,0.08);
+
+    display:flex;
+    align-items:center;
+
+    padding:0 16px;
+
+    text-decoration:none;
+
+    color:#555;
+
+    transition:0.25s ease;
+
+}
+
+.menu-item:hover{
+
+    transform:translateX(-4px);
+
+    background:#fff;
+
+    box-shadow:
+    0 12px 28px rgba(255,176,103,0.14);
+
+}
+
+.menu-dot{
+
+    width:8px;
+    height:8px;
+
+    border-radius:999px;
+
+    background:#FFB067;
+
+    margin-right:12px;
+
+}
+
+.menu-text{
+
+    font-size:14px;
+    font-weight:600;
+
+}
+
+.top-btn{
+
+    justify-content:center;
+
+    color:#FF9A47;
+
+    font-size:13px;
+
+    font-weight:700;
+
+}
+
+/* ========================= */
+/* 공통 섹션 */
+/* ========================= */
+
+section{
+
+    padding:140px 110px;
+
+    border-bottom:1px solid #F6EFE9;
+
+}
+
+.section-mini-title{
+
+    display:inline-flex;
+
+    padding:8px 15px;
+
+    border-radius:999px;
+
+    background:#FFF3EB;
+
+    color:#FF9E5D;
+
+    font-size:13px;
+    font-weight:600;
+
+    margin-bottom:20px;
+
+}
+
+.section-title{
+
+    font-size:52px;
+
+    line-height:1.2;
+
+    letter-spacing:-1.5px;
+
+    margin-bottom:50px;
+
+    color:#222;
+
+}
+
+/* ========================= */
+/* 메인 배너 */
+/* ========================= */
+
+.hero{
+
+    min-height:100vh;
+
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+
+}
+
+.hero-sub{
+
+    color:#FF9A47;
+
+    font-size:15px;
+
+    font-weight:600;
+
+    margin-bottom:18px;
+
+}
+
+.hero-title{
+
+    font-size:72px;
+
+    line-height:1.15;
+
+    letter-spacing:-2px;
+
+    margin-bottom:24px;
+
+    color:#222;
+
+}
+
+.hero-desc{
+
+    font-size:18px;
+
+    line-height:1.9;
+
+    color:#666;
+
+    max-width:680px;
+
+}
+
+/* ========================= */
+/* GUIDE */
+/* ========================= */
+
+.guide-box{
+
+    background:#fff;
+
+    border:1px solid #F5ECE5;
+
+    border-radius:30px;
+
+    padding:38px;
+
+    box-shadow:
+    0 10px 30px rgba(0,0,0,0.03);
+
+    margin-bottom:80px;
+
+}
+
+.guide-row{
+
+    display:flex;
+
+    align-items:flex-start;
+
+    gap:14px;
+
+    padding:15px 0;
+
+    border-bottom:1px solid #F8F2EE;
+
+}
+
+.guide-row:last-child{
+
+    border-bottom:none;
+
+}
+
+.guide-row p{
+
+    color:#555;
+
+    line-height:1.8;
+
+    font-size:16px;
+
+}
+
+.guide-dot{
+
+    width:8px;
+    height:8px;
+
+    border-radius:999px;
+
+    background:#FFB067;
+
+    margin-top:12px;
+
+    flex-shrink:0;
+
+}
+
+/* ========================= */
+/* 범위 카드 */
+/* ========================= */
+
+.range-title,
+.notice-title{
+
+    font-size:28px;
+
+    font-weight:700;
+
+    margin-bottom:26px;
+
+    color:#222;
+
+}
+
+.range-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:20px;
+
+    margin-bottom:90px;
+
+}
+
+.range-card{
+
+    background:#fff;
+
+    border-radius:28px;
+
+    padding:32px;
+
+    border:1px solid #F5ECE5;
+
+    box-shadow:
+    0 8px 24px rgba(0,0,0,0.03);
+
+}
+
+.range-name{
+
+    font-size:24px;
+
+    font-weight:700;
+
+    color:#222;
+
+    margin-bottom:16px;
+
+}
+
+.range-desc{
+
+    font-size:18px;
+
+    font-weight:600;
+
+    color:#FF9B54;
+
+    margin-bottom:10px;
+
+}
+
+.range-sub{
+
+    font-size:14px;
+
+    line-height:1.7;
+
+    color:#777;
+
+}
+
+/* ========================= */
+/* 아코디언 */
+/* ========================= */
+
+.accordion-wrap{
+
+    display:flex;
+    flex-direction:column;
+
+    gap:16px;
+
+}
+
+.accordion-item{
+
+    background:#fff;
+
+    border-radius:24px;
+
+    border:1px solid #F5ECE5;
+
+    overflow:hidden;
+
+    box-shadow:
+    0 8px 24px rgba(0,0,0,0.03);
+
+}
+
+.accordion-item summary{
+
+    list-style:none;
+
+    cursor:pointer;
+
+    padding:28px 30px;
+
+    font-size:18px;
+
+    font-weight:700;
+
+    color:#222;
+
+    position:relative;
+
+}
+
+.accordion-item summary::after{
+
+    content:"+";
+
+    position:absolute;
+
+    right:28px;
+    top:50%;
+
+    transform:translateY(-50%);
+
+    font-size:24px;
+
+    color:#FFAF6D;
+
+}
+
+.accordion-item[open] summary::after{
+
+    content:"–";
+
+}
+
+.accordion-content{
+
+    padding:0 30px 30px;
+
+    color:#666;
+
+    line-height:1.9;
+
+    font-size:15px;
+
+}
+
+/* ========================= */
+/* 모바일 */
+/* ========================= */
+
+@media(max-width:900px){
+
+    section{
+
+        padding:110px 28px;
+
+    }
+
+    .hero-title{
+
+        font-size:46px;
+
+    }
+
+    .section-title{
+
+        font-size:38px;
+
+    }
+
+    .range-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .floating-menu{
+
+        right:14px;
+
+    }
+
+    .menu-item{
+
+        width:48px;
+        height:48px;
+
+        padding:0;
+
+        justify-content:center;
+
+    }
+
+    .menu-text{
+
+        display:none;
+
+    }
+
+    .menu-dot{
+
+        margin-right:0;
+
+    }
+
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- ========================= -->
+<!-- 오른쪽 메뉴 -->
+<!-- ========================= -->
+
+<div class="floating-menu">
+
+    <a href="#guide" class="menu-item">
+        <div class="menu-dot"></div>
+        <div class="menu-text">가이드</div>
+    </a>
+
+    <a href="#range" class="menu-item">
+        <div class="menu-dot"></div>
+        <div class="menu-text">범위</div>
+    </a>
+
+    <a href="#notice" class="menu-item">
+        <div class="menu-dot"></div>
+        <div class="menu-text">필독</div>
+    </a>
+  
+    <a href="#deforme" class="menu-item">
+        <div class="menu-dot"></div>
+        <div class="menu-text">데포르메</div>
+    </a>
+    <a href="#illust" class="menu-item">
+        <div class="menu-dot"></div>
+        <div class="menu-text">스타일</div>
+    </a>
+  
+    <a href="#" class="menu-item top-btn">
+        TOP
+    </a>
+
+</div>
+
+<!-- ========================= -->
+<!-- 메인 -->
+<!-- ========================= -->
+
+<section class="hero">
+
+    <div class="hero-sub">
+        THXCARROT COMMISSION
+    </div>
+
+    <br>
+
+    <img src="anigif2.gif" class="hero-banner">
+
+</section>
+
+<style>
+
+/* 메인 섹션 */
+
+.hero{
+
+    min-height:100vh;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:center;
+
+    text-align:center;
+
+}
+
+/* 위 작은 글씨 */
+
+.hero-sub{
+
+    color:#FF9A47;
+
+    font-size:15px;
+
+    font-weight:600;
+
+    margin-bottom:12px;
+
+    letter-spacing:1px;
+
+}
+
+/* 배너 이미지 */
+
+.hero-banner{
+
+    width:100%;
+
+    max-width:900px;
+
+    display:block;
+
+}
+
+</style>
+
+<!-- ========================= -->
+<!-- GUIDE -->
+<!-- ========================= -->
+
+<section id="guide">
+
+    <div class="section-mini-title">
+        GUIDE
+    </div>
+
+    <h1 class="section-title">
+        작업 전 꼭 확인해주세요
+    </h1>
+
+    <div class="guide-box">
+
+        <div class="guide-row">
+            <div class="guide-dot"></div>
+            <p>작업물의 저작권은 <b>thxcarrot</b>에게 있습니다.</p>
+        </div>
+
+        <div class="guide-row">
+            <div class="guide-dot"></div>
+            <p>장르는 가리지 않습니다. 허나 미숙할 수 있습니다.</p>
+        </div>
+
+        <div class="guide-row">
+            <div class="guide-dot"></div>
+          <p>모든 작업물은 <b> 샘플 및 SNS 업로드 등</b>에 사용될 수 있습니다.</p>
+        </div>
+
+        <div class="guide-row">
+            <div class="guide-dot"></div>
+          <p><b>인원 추가는 x2~ (인당 추가금)</b> 으로 진행됩니다.</p>
+        </div>
+
+        <div class="guide-row">
+            <div class="guide-dot"></div>
+          <p><b>상업용 작업은 오리지널 캐릭터만 가능</b>합니다.</p>
+        </div>
+
+        <div class="guide-row">
+            <div class="guide-dot"></div>
+            <p>본문 미숙지로 인해 발생한 문제는 책임지지 않습니다.</p>
+        </div>
+
+        <div class="guide-row">
+            <div class="guide-dot"></div>
+            <p>샘플 이미지는 커미션 작업물이므로 문의 시 예시 자료 용도 외의 저장은 불가합니다.</p>
+        </div>
+
+        <div class="guide-row">
+            <div class="guide-dot"></div>
+            <p>작업이 어렵다고 판단될 경우 의뢰를 거절할 수 있습니다.</p>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ========================= -->
+<!-- RANGE -->
+<!-- ========================= -->
+
+<section id="range">
+
+    <div class="section-mini-title">
+        RANGE
+    </div>
+
+    <h1 class="section-title">
+        작업 범위
+    </h1>
+
+    <div class="range-grid">
+
+        <div class="range-card">
+
+            <div class="range-name">
+                두상
+            </div>
+
+            <div class="range-desc">
+                목 ~ 어깨
+            </div>
+
+            <div class="range-sub">
+                상황에 따라 목에서 잘릴 수 있습니다.
+            </div>
+
+        </div>
+
+        <div class="range-card">
+
+            <div class="range-name">
+                흉상
+            </div>
+
+            <div class="range-desc">
+                가슴 ~ 가슴 밑
+            </div>
+            <div class="range-sub">
+                가슴부터 가슴 밑 부분까지 입니다.
+            </div>
+
+        </div>
+
+        <div class="range-card">
+
+            <div class="range-name">
+                반신
+            </div>
+
+            <div class="range-desc">
+                골반 ~ 허벅지
+            </div>
+
+            <div class="range-sub">
+                포즈 및 구도에 따라 골반까지만 나오는 경우가 있습니다.
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ========================= -->
+<!-- NOTICE -->
+<!-- ========================= -->
+
+<section id="notice">
+
+    <div class="section-mini-title">
+        NOTICE
+    </div>
+
+    <h1 class="section-title">
+        필독 사항
+    </h1>
+
+    <div class="accordion-wrap">
+
+        <details class="accordion-item" open>
+
+            <summary>
+                작업 기간
+            </summary>
+
+            <div class="accordion-content">
+
+                작업 기간은 <b>시작 후 약 10~15일</b>입니다.<br><br>
+
+                의뢰자님의 답변 지연(반나절 이상)으로 인해
+                마감 일정이 늦어질 수 있습니다.<br><br>
+
+                장기간 연락이 어려운 경우 미리 말씀 부탁드립니다.<br><br>
+
+                마감 시간은 전달 예정일의 <b>밤 12시 또는
+              다음날 오전 8시 이전</b>입니다. 하루 여유있게 신청 해 주세요.
+               <span style="
+        display:block;
+        margin-top:18px;
+        padding:14px 18px;
+        border-radius:16px;
+        background:#FFF6F0;
+        color:#888;
+        font-size:14px;
+        line-height:1.8;
+    ">
+        예: 1월 1일 신청 → 1월 10일 밤 12시 또는 1월 11일 오전 8시 이전 전달
+    </span>
+
+            </div>
+
+        </details>
+
+        <details class="accordion-item">
+
+            <summary>
+                수정 안내
+            </summary>
+
+            <div class="accordion-content">
+
+                수정은 최대한 만족하실 때까지 진행해드립니다.<br><br>
+
+                러프 단계에서 원하시는 방향을 자세하게 말씀해주세요.<br><br>
+
+                단, 구도 전체 변경 / 캐릭터 교체 등의 큰 수정은 어렵습니다.
+
+            </div>
+
+        </details>
+
+        <details class="accordion-item">
+
+            <summary>
+                배경 안내
+            </summary>
+
+            <div class="accordion-content">
+
+                배경은 오픈소스 또는 AI 생성 후 리터칭하여 사용합니다.<br><br>
+
+                복잡한 배경 및 커스텀 작업은 추가금이 발생할 수 있습니다.<br><br>
+
+                일반적인 배경은 추가금 없이 진행됩니다.<br><br>
+
+                수작업 배경은 별도 문의 부탁드립니다.
+
+            </div>
+
+        </details>
+
+    </div>
+  <Style>
+    /* ========================= */ /* 아코디언 열릴 때 */ /* ========================= */ .accordion-item[open] .accordion-content{ animation:accordionBounce 0.42s ease; } /* 통통 튀는 애니메이션 */ @keyframes accordionBounce{ 0%{ opacity:0; transform: translateY(12px) scale(0.98); } 60%{ opacity:1; transform: translateY(-4px) scale(1.01); } 100%{ opacity:1; transform: translateY(0) scale(1); } }
+    /* 버튼 호버 */
+
+.style-buttons button:hover{
+
+    background:#FFE3CF;
+
+    transform:
+    translateY(-3px)
+    scale(1.06);
+    </style>
+</section>
+<!-- ========================= -->
+<!-- 데포르메 섹션 -->
+<!-- ========================= -->
+
+<section id="deforme">
+ 
+
+    <div class="section-mini-title">
+        DEFORME
+    </div>
+
+    <h1 class="section-title">
+        데포르메 선택
+    </h1>
+
+    <p class="deforme-text">
+        원하시는 데포르메 선택 가능합니다.<br>
+      <b>기본적으로 캐릭터 캐주얼</b>로 작업됩니다.
+    </p>
+
+    <!-- 이미지 박스 -->
+
+    <div class="deforme-image-wrap">
+
+        <!-- 여기 이미지 경로만 바꾸면 됨 -->
+
+        <img src="images/deforme.png" alt="데포르메 샘플">
+
+    </div>
+
+</section>
+
+<!-- ========================= -->
+<!-- CSS -->
+<!-- ========================= -->
+
+<style>
+
+/* 데포르메 설명 */
+
+.deforme-text{
+
+    font-size:16px;
+
+    line-height:1.9;
+
+    color:#666;
+
+    margin-bottom:38px;
+
+}
+
+/* 이미지 전체 박스 */
+
+.deforme-image-wrap{
+
+    background:#fff;
+
+    padding:18px;
+
+    border-radius:34px;
+
+    border:1px solid #F4ECE6;
+
+    box-shadow:
+    0 10px 30px rgba(0,0,0,0.03);
+
+    overflow:hidden;
+
+}
+
+/* 이미지 */
+
+.deforme-image-wrap img{
+
+    width:100%;
+
+    display:block;
+
+    border-radius:24px;
+
+}
+
+/* 모바일 */
+
+@media(max-width:900px){
+
+    .deforme-image-wrap{
+
+        padding:12px;
+
+        border-radius:24px;
+
+    }
+
+    .deforme-image-wrap img{
+
+        border-radius:16px;
+
+    }
+
+}
+/* + 버튼 */
+
+.style-accordion summary::after{
+
+    content:"+";
+
+    position:absolute;
+
+    right:32px;
+    top:50%;
+
+    transform:translateY(-50%);
+
+    font-size:28px;
+
+    color:#FFAA67;
+
+    transition:0.28s ease;
+
+}
+
+/* 열렸을 때 */
+
+.style-accordion[open] summary::after{
+
+    content:"–";
+
+    transform:
+    translateY(-50%)
+    rotate(180deg)
+    scale(1.18);
+
+}
+
+/* 마우스 올리면 */
+
+.style-accordion summary:hover::after{
+
+    transform:
+    translateY(-50%)
+    scale(1.16);
+
+}
+.style-accordion summary{ transition:0.25s ease; } .style-accordion summary:hover{ background:#FFF9F4; }
+
+</style>
+  
+<!-- ========================= -->
+<!-- ILLUST STYLE -->
+<!-- ========================= -->
+
+<section id="illust">
+
+    <!-- 작은 제목 -->
+
+    <div class="section-mini-title">
+        ILLUST
+    </div>
+
+    <!-- 큰 제목 -->
+
+    <h1 class="section-main-title">
+        일러스트 스타일
+    </h1>
+
+    <!-- 아코디언 -->
+
+    <details class="style-accordion" open>
+
+        <summary>
+            스타일 자세히 보기
+        </summary>
+
+        <div class="style-content">
+
+            <!-- 안내 카드 -->
+
+            <div class="style-guide">
+
+                <div class="guide-item">
+
+                    <div class="guide-icon">
+                        ✦
+                    </div>
+
+                    <div class="guide-text">
+
+                        일러스트 사용처를 말씀해주시면<br>
+                        분위기에 맞춰 작업 방향을 조정합니다.
+
+                        <span>
+                            방송화면 · 커버곡 · 썸네일 · 소장용 등
+                        </span>
+
+                    </div>
+
+                </div>
+
+                <div class="guide-item">
+
+                    <div class="guide-icon">
+                        ✦
+                    </div>
+
+                    <div class="guide-text">
+
+                        원하시는 분위기의 샘플이 있다면<br>
+                        함께 첨부해주시면 좋아요.
+
+                    </div>
+
+                </div>
+
+                <div class="guide-item">
+
+                    <div class="guide-icon">
+                        ✦
+                    </div>
+
+                    <div class="guide-text">
+
+                        기본적으로 <b>A 타입</b>으로 진행되며,<br>
+                        <b>B 타입</b>은 따로 말씀 부탁드립니다.
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- 슬라이드 -->
+
+            <div class="style-slider">
+
+                <!-- A 타입 -->
+
+                <div class="style-slide active">
+
+                    <div class="style-title">
+                        A 타입
+                    </div>
+
+                    <div class="style-sub">
+                        깔끔한 느낌.<br>
+                        방송용 화면 · 커버곡 일러스트에 추천드려요.
+                    </div>
+
+                    <div class="style-image-box">
+
+                        <img src="images/style-a.png">
+
+                    </div>
+
+                </div>
+
+                <!-- B 타입 -->
+
+                <div class="style-slide">
+
+                    <div class="style-title">
+                        B 타입
+                    </div>
+
+                    <div class="style-sub">
+                        러프 선 느낌으로 진행되며<br>
+                        선이 일정하지 않은 타입입니다.
+                    </div>
+
+                    <div class="style-image-box">
+
+                        <img src="images/style-b.png">
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- 버튼 -->
+
+            <div class="style-buttons">
+
+                <button id="prevBtn">
+                    ⟵
+                </button>
+
+                <button id="nextBtn">
+                    ⟶
+                </button>
+
+            </div>
+
+        </div>
+
+    </details>
+
+</section>
+
+<style>
+
+/* ========================= */
+/* 섹션 */
+/* ========================= */
+
+#style{
+
+    margin-top:140px;
+
+}
+
+/* 작은 pill */
+
+.section-mini-title{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    padding:10px 18px;
+
+    border-radius:999px;
+
+    background:#FFF1E7;
+
+    color:#FF9A57;
+
+    font-size:14px;
+
+    font-weight:700;
+
+    letter-spacing:0.5px;
+
+    margin-bottom:24px;
+
+}
+
+/* 큰 제목 */
+
+.section-main-title{
+
+    font-size:64px;
+
+    font-weight:800;
+
+    line-height:1.2;
+
+    color:#222;
+
+    margin-bottom:50px;
+
+}
+
+/* ========================= */
+/* 아코디언 */
+/* ========================= */
+
+.style-accordion{
+
+    background:#fff;
+
+    border-radius:34px;
+
+    border:1px solid #F5ECE5;
+
+    overflow:hidden;
+
+    box-shadow:
+    0 10px 30px rgba(0,0,0,0.03);
+
+}
+
+/* 제목 */
+
+.style-accordion summary{
+
+    list-style:none;
+
+    cursor:pointer;
+
+    padding:32px;
+
+    font-size:28px;
+
+    font-weight:700;
+
+    color:#222;
+
+    position:relative;
+
+}
+
+/* + - */
+
+.style-accordion summary::after{
+
+    content:"+";
+
+    position:absolute;
+
+    right:32px;
+    top:50%;
+
+    transform:translateY(-50%);
+
+    font-size:28px;
+
+    color:#FFAA67;
+
+}
+
+.style-accordion[open] summary::after{
+
+    content:"–";
+
+}
+
+/* 내부 */
+
+.style-content{
+
+    padding:0 32px 42px;
+
+}
+
+/* ========================= */
+/* 안내 카드 */
+/* ========================= */
+
+.style-guide{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:18px;
+
+    margin-bottom:50px;
+
+}
+
+/* 카드 */
+
+.guide-item{
+
+    display:flex;
+
+    gap:18px;
+
+    align-items:flex-start;
+
+    padding:24px;
+
+    border-radius:26px;
+
+    background:#FFF9F4;
+
+    border:1px solid #F7E8DC;
+
+    transition:0.25s ease;
+
+}
+
+/* 호버 */
+
+.guide-item:hover{
+
+    background:#FFF1E7;
+
+    transform:
+    translateY(-4px)
+    scale(1.01);
+
+    box-shadow:
+    0 10px 24px rgba(255,170,110,0.12);
+
+}
+
+/* 아이콘 */
+
+.guide-icon{
+
+    width:36px;
+    height:36px;
+
+    border-radius:999px;
+
+    background:#FFE8D6;
+
+    color:#FF9A57;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    font-size:14px;
+
+    flex-shrink:0;
+
+    transition:0.25s ease;
+
+}
+
+/* 아이콘 호버 */
+
+.guide-item:hover .guide-icon{
+
+    background:#FFD7BA;
+
+    transform:scale(1.08);
+
+}
+
+/* 글 */
+
+.guide-text{
+
+    color:#555;
+
+    font-size:15px;
+
+    line-height:1.9;
+
+    transition:0.25s ease;
+
+}
+
+/* 호버 글 */
+
+.guide-item:hover .guide-text{
+
+    color:#444;
+
+}
+
+/* 보조글 */
+
+.guide-text span{
+
+    display:block;
+
+    margin-top:6px;
+
+    color:#999;
+
+    font-size:14px;
+
+}
+
+/* 강조 */
+
+.guide-text b{
+
+    color:#FF9A57;
+
+}
+
+/* ========================= */
+/* 슬라이드 */
+/* ========================= */
+
+.style-slide{
+
+    display:none;
+
+}
+
+.style-slide.active{
+
+    display:block;
+
+    animation:bounceSlide 0.45s ease;
+
+}
+
+/* 애니메이션 */
+
+@keyframes bounceSlide{
+
+    0%{
+
+        opacity:0;
+
+        transform:
+        translateY(18px)
+        scale(0.96);
+
+    }
+
+    60%{
+
+        opacity:1;
+
+        transform:
+        translateY(-5px)
+        scale(1.01);
+
+    }
+
+    100%{
+
+        opacity:1;
+
+        transform:
+        translateY(0)
+        scale(1);
+
+    }
+
+}
+
+/* 타입명 */
+
+.style-title{
+
+    font-size:32px;
+
+    font-weight:700;
+
+    color:#222;
+
+    margin-bottom:10px;
+
+}
+
+/* 설명 */
+
+.style-sub{
+
+    font-size:15px;
+
+    line-height:1.8;
+
+    color:#777;
+
+    margin-bottom:28px;
+
+}
+
+/* 이미지 박스 */
+
+.style-image-box{
+
+    background:#fff;
+
+    border:1px solid #F4ECE6;
+
+    border-radius:32px;
+
+    padding:18px;
+
+    box-shadow:
+    0 10px 24px rgba(0,0,0,0.03);
+
+}
+
+/* 이미지 */
+
+.style-image-box img{
+
+    width:100%;
+
+    display:block;
+
+    border-radius:22px;
+
+}
+
+/* ========================= */
+/* 버튼 */
+/* ========================= */
+
+.style-buttons{
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:16px;
+
+    margin-top:34px;
+
+}
+
+.style-buttons button{
+
+    width:58px;
+    height:58px;
+
+    border:none;
+
+    border-radius:999px;
+
+    background:#FFF1E7;
+
+    color:#FF9B57;
+
+    font-size:28px;
+
+    font-weight:900;
+
+    cursor:pointer;
+
+    transition:0.22s ease;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    box-shadow:
+    0 6px 16px rgba(255,170,110,0.18);
+
+}
+
+/* 버튼 호버 */
+
+.style-buttons button:hover{
+
+    background:#FFE3CF;
+
+    transform:
+    translateY(-3px)
+    scale(1.06);
+
+}
+
+/* 버튼 클릭 */
+
+.style-buttons button:active{
+
+    transform:scale(0.93);
+
+}
+/* ========================= */
+/* ✨ 전체 통통 hover 효과 (원클릭 버전) */
+/* ========================= */
+
+.guide-box,
+.range-card,
+.accordion-item,
+.deforme-image-wrap,
+.style-image-box {
+    transition: 0.25s ease;
+}
+
+.guide-box:hover,
+.range-card:hover,
+.accordion-item:hover,
+.deforme-image-wrap:hover,
+.style-image-box:hover {
+    transform: translateY(-6px) scale(1.02);
+    box-shadow: 0 14px 30px rgba(255, 170, 110, 0.18);
+}
+
+/* 이미지도 같이 살짝 살아움직이게 */
+img {
+    transition: 0.3s ease;
+}
+
+img:hover {
+    transform: translateY(-4px) scale(1.02);
+    filter: brightness(1.05);
+}
+  /* ========================= */
+/* MODE BUTTON (크게) */
+/* ========================= */
+
+.mode-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    margin-bottom: 30px;
+}
+
+.mode-btn {
+    padding: 14px 26px;
+    border-radius: 999px;
+    border: none;
+    background: #FFF1E7;
+    color: #FF9A57;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: 0.25s ease;
+}
+
+.mode-btn:hover {
+    transform: translateY(-5px) scale(1.05);
+    background: #FFE3CF;
+}
+
+/* ========================= */
+/* GALLERY */
+/* ========================= */
+
+.gallery {
+    max-width: 1000px;
+    margin: auto;
+    overflow: hidden;
+}
+
+.track {
+    display: none;
+    gap: 14px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.track.active {
+    display: flex;
+}
+
+/* 가로 */
+.horizontal img {
+    width: 30%;
+    border-radius: 18px;
+    cursor: pointer;
+    transition: 0.25s ease;
+}
+
+/* 세로 */
+.vertical img {
+    width: 70%;
+    border-radius: 18px;
+    cursor: pointer;
+    transition: 0.25s ease;
+}
+
+/* 통통 튐 효과 */
+.bounce {
+    animation: bounce 0.35s ease;
+}
+
+@keyframes bounce {
+    0% { transform: scale(1); }
+    40% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+/* hover */
+img:hover {
+    transform: translateY(-6px) scale(1.02);
+    box-shadow: 0 14px 30px rgba(255,170,110,0.18);
+}
+
+/* ========================= */
+/* controls */
+/* ========================= */
+
+.controls {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.controls button {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    border: none;
+    background: #FFF1E7;
+    font-size: 22px;
+    cursor: pointer;
+}
+
+/* ========================= */
+/* MODAL */
+/* ========================= */
+
+#modal {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.6);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+.modal-box {
+    position: relative;
+    max-width: 80%;
+}
+
+.modal-box img {
+    width: 100%;
+    border-radius: 20px;
+}
+
+/* 닫기 버튼 */
+.close {
+    position: absolute;
+    top: -18px;
+    right: -18px;
+    width: 42px;
+    height: 42px;
+    background: #FF9A57;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    cursor: pointer;
+}
+</style>
+
+<script>
+
+const slides =
+document.querySelectorAll('.style-slide');
+
+let currentSlide = 0;
+
+/* 슬라이드 보여주기 */
+
+function showSlide(index){
+
+    slides.forEach(slide => {
+
+        slide.classList.remove('active');
+
+    });
+
+    slides[index].classList.add('active');
+
+}
+
+/* 다음 */
+
+document
+.getElementById('nextBtn')
+.addEventListener('click', () => {
+
+    currentSlide++;
+
+    if(currentSlide >= slides.length){
+
+        currentSlide = 0;
+
+    }
+
+    showSlide(currentSlide);
+
+});
+
+/* 이전 */
+
+document
+.getElementById('prevBtn')
+.addEventListener('click', () => {
+
+    currentSlide--;
+
+    if(currentSlide < 0){
+
+        currentSlide = slides.length - 1;
+
+    }
+
+    showSlide(currentSlide);
+
+});
+
+</script>
+<section id="portfolio">
+
+    <div class="section-mini-title">PORTFOLIO</div>
+    <h1 class="section-title">샘플 작업</h1>
+
+    <!-- 큰 모드 버튼 -->
+    <div class="mode-buttons">
+        <button class="mode-btn" onclick="setMode('horizontal')">가로 모드</button>
+        <button class="mode-btn" onclick="setMode('vertical')">세로 모드</button>
+    </div>
+
+    <!-- 갤러리 -->
+    <div class="gallery" id="gallery">
+
+        <!-- 슬라이드 그룹 (가로) -->
+        <div class="track horizontal active" id="horizontalTrack">
+
+            <img src="1.jpg">
+            <img src="2.jpg">
+            <img src="3.jpg">
+            <img src="4.jpg">
+            <img src="5.jpg">
+
+        </div>
+
+        <!-- 슬라이드 그룹 (세로) -->
+        <div class="track vertical" id="verticalTrack">
+
+            <img src="6.jpg">
+            <img src="7.jpg">
+            <img src="8.jpg">
+            <img src="9.jpg">
+            <img src="10.jpg">
+
+        </div>
+
+    </div>
+
+    <!-- 화살표 -->
+    <div class="controls">
+        <button id="prev">⟵</button>
+        <button id="next">⟶</button>
+    </div>
+
+</section>
+
+<!-- 모달 -->
+<div id="modal">
+    <div class="modal-box">
+        <img id="modal-img">
+        <div class="close" onclick="closeModal()">✕</div>
+    </div>
+</div>
+</body>
+</html>
